@@ -1,4 +1,4 @@
-const Helper = function(name) {
+class Helper = function(name) {
   this.name = name
 }
 
