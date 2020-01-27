@@ -1,6 +1,6 @@
 class Helper {
   constructor () {
-  this.playPauseAndUpdate
+  this.playPauseAndUpdate =
 }
 
 const helper = new Helper()
