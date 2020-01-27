@@ -1,5 +1,5 @@
-class Helper = function(name) {
-  this.name = name
+class Helper {
+
 }
 
 const helper = new Helper()
