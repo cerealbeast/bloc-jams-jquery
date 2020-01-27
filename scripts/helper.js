@@ -1,6 +1,3 @@
-{
-  var helper = function() {
-    
-  }
-
-};
+class Helper {
+  
+}
