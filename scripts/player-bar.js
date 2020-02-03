@@ -34,6 +34,8 @@
     player.setVolume(event.target.value);
   });
 
+  const doSomething = () => {
+
   setInterval( () => {
     if (player.playState !== 'playing') { return; }
     const currentTime = player.getTime();
@@ -41,5 +43,8 @@
     const percent = (currentTime / duration) * 100;
     $('#time-control .current-time').text( currentTime );
     $('#time-control input').val(percent);
+    doSomething();
   }, 1000);
 }
+
+new Date().getTime() + 1000;
