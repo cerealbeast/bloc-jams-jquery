@@ -15,8 +15,8 @@ class Player {
   }
 
   remainingTime() {
-    return this.soundObject.remainingTime();
-  }
+    return this.soundObject.getTime() - this.soundObject.getDuration();
+}
 
   playPause (song = this.currentlyPlaying) {
     if (this.currentlyPlaying !== song) {
