@@ -1,6 +1,6 @@
 class Helper {
   playPauseAndUpdate(song){
     player.playPause(song);
-    playPauseandUpdate(total.Time);
+    player.getDuration(song);
 
 const helper = new Helper()
