@@ -40,6 +40,24 @@
     const duration = player.getDuration();
     const percent = (currentTime / duration) * 100;
     $('#time-control .current-time').text( currentTime );
+    $('#time-control .total-time').text( totalTime );
     $('#time-control input').val(percent);
   }, 1000);
 };
+
+function calculateTotalValue(length) {
+ var minutes = Math.floor(length / 60);
+   let seconds_int = length - minutes * 60;
+   let seconds_str = seconds_int.toString()
+   let seconds = seconds_str.substr(0, 2);
+   let time = minutes + ':' + seconds;
+ return time;
+}
+function calculateCurrentValue(currentTime) {
+ var current_hour = parseInt(currentTime / 3600) % 24;
+   let current_minute = parseInt(currentTime / 60) % 60;
+   let current_seconds_long = currentTime % 60;
+   let current_seconds = current_seconds_long.toFixed();
+   let current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
+ return current_time;
+}
