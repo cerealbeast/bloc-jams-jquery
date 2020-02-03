@@ -34,17 +34,19 @@
     player.setVolume(event.target.value);
   });
 
-  const doSomething = () => {
-
-  setInterval( () => {
-    if (player.playState !== 'playing') { return; }
-    const currentTime = player.getTime();
-    const duration = player.getDuration();
-    const percent = (currentTime / duration) * 100;
-    $('#time-control .current-time').text( currentTime );
-    $('#time-control input').val(percent);
-    doSomething();
-  }, 1000);
+calculateTotalValue(length) {
+ var minutes = Math.floor(length / 60),
+   seconds_int = length - minutes * 60,
+   seconds_str = seconds_int.toString(),
+   seconds = seconds_str.substr(0, 2),
+   time = minutes + ':' + seconds
+ return time;
 }
-
-new Date().getTime() + 1000;
+function calculateCurrentValue(currentTime) {
+ var current_hour = parseInt(currentTime / 3600) % 24,
+   current_minute = parseInt(currentTime / 60) % 60,
+   current_seconds_long = currentTime % 60,
+   current_seconds = current_seconds_long.toFixed(),
+   current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
+ return current_time;
+});
