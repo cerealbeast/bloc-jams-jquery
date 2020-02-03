@@ -42,7 +42,7 @@ calculateTotalValue(length) {
    time = minutes + ':' + seconds
  return time;
 }
-function calculateCurrentValue(currentTime) {
+calculateCurrentValue(currentTime) {
  var current_hour = parseInt(currentTime / 3600) % 24,
    current_minute = parseInt(currentTime / 60) % 60,
    current_seconds_long = currentTime % 60,
