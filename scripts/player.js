@@ -14,6 +14,10 @@ class Player {
     return this.soundObject.getTime();
   }
 
+  remainingTime() {
+    return this.soundObject.remainingTime();
+  }
+
   playPause (song = this.currentlyPlaying) {
     if (this.currentlyPlaying !== song) {
       // Stop the currently playing sound file (even if nothing is playing)
